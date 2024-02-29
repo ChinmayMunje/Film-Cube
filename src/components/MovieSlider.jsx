@@ -6,9 +6,12 @@ import { API_TOKEN, BASE_URL } from '../utils'
 import { useSelector } from 'react-redux'
 import { IoIosStar } from "react-icons/io";
 import dayjs from 'dayjs'
+import { useNavigate } from 'react-router-dom';
 
 
 const MovieSlider = () => {
+
+    const navigate = useNavigate();
 
     const [nowPlaying, setNowPlaying] = useState([]);
     const { url } = useSelector((state) => state.home);
@@ -34,7 +37,7 @@ const MovieSlider = () => {
                 showStatus={false}
             >
                 {nowPlaying.map((playing, index) => (
-                    <div key={index} className='relative'>
+                    <div key={index} className='relative cursor-pointer' onClick={() => navigate(`/movie/${playing.id}`)}>
                         <img src={url.backdrop + playing.backdrop_path} alt="poster" className='h-[550px]' />
                         <div className="absolute left-0 top-1/2 transform -translate-y-1/2 text-white text-lg font-bold ml-8 md:ml-0 md:left-8">
                             <div className='flex flex-col md:flex-row gap-3'>
