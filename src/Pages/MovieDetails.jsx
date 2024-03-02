@@ -64,7 +64,7 @@ const MovieDetails = () => {
         Authorization: "Bearer " + API_TOKEN
       }
     }).then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       setSimilar(res.data);
     }).catch((err) => {
       console.log(err);
@@ -78,7 +78,7 @@ const MovieDetails = () => {
         Authorization: "Bearer " + API_TOKEN
       }
     }).then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       setRecommended(res.data);
     }).catch((err) => {
       console.log(err);

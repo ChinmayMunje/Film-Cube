@@ -5,7 +5,7 @@ const VideoPopup = ({ show, setShow, videoId, setVideoId }) => {
     const hidePopup = () => {
         setShow(false);
         setVideoId(null);
-        console.log(videoId);
+        console.log("VIDEO IS IS "+videoId);
     };
     return (
         <div className={`fixed top-0 left-0 w-full h-full flex justify-center items-center opacity-0 invisible z-10
@@ -18,7 +18,7 @@ const VideoPopup = ({ show, setShow, videoId, setVideoId }) => {
                     Close
                 </span>
                 <ReactPlayer
-                    url={`https://www.youtube.com/embed/${videoId}`}
+                    url={`http://www.youtube.com/watch?v=${videoId}`}
                     controls
                     width="100%"
                     height="100%"

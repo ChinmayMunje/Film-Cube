@@ -51,7 +51,7 @@ const MovieDetailBanner = ({ data, video, credits }) => {
                             className='flex items-center gap-2 ml-3 bg-red-500 text-white px-3 py-2 rounded-md md:text-lg hover:bg-red-600 focus:outline-none'
                             onClick={() => {
                                 setShow(true);
-                                setVideoId(video?.key);
+                                setVideoId(video.key);
                             }}
                         >
                             <IoPlayCircleOutline size="24px" className="md:text-xl" />
@@ -98,6 +98,12 @@ const MovieDetailBanner = ({ data, video, credits }) => {
                     </div>
                 </div>
             </div>
+                <VideoPopup
+                show={show}
+                setShow={setShow}
+                videoId={videoId}
+                setVideoId={setVideoId}
+                />
         </>
 
     )
